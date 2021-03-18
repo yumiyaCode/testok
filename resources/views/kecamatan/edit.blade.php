@@ -12,11 +12,7 @@
                 <input type="hidden" name="_method" value="PUT">
                     @csrf
                      <div class="form-group">
-<<<<<<< HEAD
                         <label for="">Kota</label>
-=======
-                        <label for="">Asal kecamatan</label>
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
                         <select name="id_kota" class="form-control" required>
                             @foreach($kota as $data)
                             <option value="{{$data->id}}"

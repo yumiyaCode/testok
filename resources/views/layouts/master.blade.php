@@ -4,11 +4,7 @@
     <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<<<<<<< HEAD
 <title>Tracking Covid dashboard</title>
-=======
-<title>Purple Admin</title>
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
 <!-- plugins:css -->
 <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
 <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">

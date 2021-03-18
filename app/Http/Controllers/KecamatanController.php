@@ -48,18 +48,11 @@ class KecamatanController extends Controller
         $request->validate([
             'nama_kecamatan' => 'required|unique:kecamatans'
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
         ],
         [
             'nama_kecamatan.required' => 'Nama kecamatan Harap Diisi!',
             'nama_kecamatan.unique' => 'Nama Sudah Terpakai'
-<<<<<<< HEAD
             
-=======
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
 
         ]);
 

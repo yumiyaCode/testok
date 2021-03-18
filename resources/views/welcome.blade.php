@@ -187,49 +187,7 @@
                    </div>
                   </div>
               </div>
-<<<<<<< HEAD
            
-=======
-  
-              <div class="container">
-              <div class="row justify-content-center">
-                 <h3 class="" style="margin-bottom:30px; color:blue;"><b> Data Global</b> <br></h3>
-              <div class="col-md-12"  style="margin-bottom:40px">
-                  <div class="card">
-                  <div class="card-body">
-                  <table  class="table table-striped table-bordered" style="width:100%" id="f">
-                    <thead>
-                      <tr>
-                         <th>No</th>
-                         <th>Negara</th> 
-                         <th>Kasus</th>     
-                         <th>Positif</th>
-                         <th>Sembuh</th>
-                         <th>Meninggal</th>
-                       
-                       </tr>  
-                    </thead>
-                    <tbody>
-                         @php $no= 1; @endphp
-                         @foreach($data as $data1)
-                            <tr>
-                                <th scoppe="row">{{$no++}}</th>
-                                <td>{{$data1['nama_negara']}}<br></td>
-                                <td>{{$data1['kasus']}}</td>
-                                <td>{{$data1['aktif']}}</td>
-                                <td>{{$data1['sembuh']}}</td>
-                                <td>{{$data1['meninggal']}}</td>
-                            </tr>
-                          @endforeach
-                  </tbody>  
-                 </table>
-                  </div>
-                    
-              </div>
-                   </div>
-                  </div>
-              </div>
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
                 
 
     <div class="site-section">
@@ -239,7 +197,7 @@
             <figure class="img-play-vid">
               <img src="{{asset('assets/frontend/images/corona.png')}}" alt="Image" class="img-fluid">
               <div class="absolute-block d-flex">
-                <span class="text">Watch the Video</span>
+                <span class="text">Watch the Video!</span>
                 <a href="https://www.youtube.com/watch?v=9pVy8sRC440" data-fancybox class="btn-play">
                   <span class="icon-play"></span>
                 </a>

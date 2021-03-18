@@ -46,15 +46,9 @@ class KasuseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-<<<<<<< HEAD
             'positif' => 'required|min:0|integer',
             'meninggal' => 'required|min:0|integer',
             'sembuh' => 'required|min:0|integer',
-=======
-            'positif' => 'required',
-            'meninggal' => 'required',
-            'sembuh' => 'required',
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
             'tanggal' => 'required'
             
 
@@ -63,7 +57,6 @@ class KasuseController extends Controller
             'positif.required' => 'Harap Diisi!',
             'meninggal.required' => 'Harap Diisi!',
             'sembuh.required' => 'Harap Diisi!',
-<<<<<<< HEAD
             'tanggal.required' => 'Tanggal Harap Diisi!',
             'positif.min' => 'min 0!',
             'meninggal.min' => 'min 0!',
@@ -71,9 +64,6 @@ class KasuseController extends Controller
             'positif.integer' => 'data integer!',
             'meninggal.integer' => 'data integer!',
             'sembuh.integer' => 'data integer!'
-=======
-            'tanggal.required' => 'Tanggal Harap Diisi!'
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
            
 
         ]);
@@ -126,31 +116,9 @@ class KasuseController extends Controller
     {
 
         $request->validate([
-<<<<<<< HEAD
             'positif' => 'required|min:0|integer',
             'meninggal' => 'required|min:0|integer',
             'sembuh' => 'required|min:0|integer',
-=======
-            'positif' => 'required',
-            'meninggal' => 'required',
-            'sembuh' => 'required',
-            'tanggal' => 'required'
-            
-
-        ],
-        [
-            'positif.required' => 'Harap Diisi!',
-            'meninggal.required' => 'Harap Diisi!',
-            'sembuh.required' => 'Harap Diisi!',
-            'tanggal.required' => 'Tanggal Harap Diisi!'
-           
-
-        ]);
-        $request->validate([
-            'positif' => 'required',
-            'meninggal' => 'required',
-            'sembuh' => 'required',
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
             'tanggal' => 'required'
             
 
@@ -160,15 +128,12 @@ class KasuseController extends Controller
             'meninggal.required' => 'Harap Diisi!',
             'sembuh.required' => 'Harap Diisi!',
             'tanggal.required' => 'Tanggal Harap Diisi!',
-<<<<<<< HEAD
             'positif.min' => 'min 0!',
             'meninggal.min' => 'min 0!',
             'sembuh.min' => 'min 0!',
             'positif.integer' => 'data integer!',
             'meninggal.integer' => 'data integer!',
             'sembuh.integer' => 'data integer!'
-=======
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
            
 
         ]);

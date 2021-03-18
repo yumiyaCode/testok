@@ -22,11 +22,7 @@
                     </div>
                      </div>
                      <div class="form-group">
-<<<<<<< HEAD
                         <label for="">Provinsi</label>
-=======
-                        <label for="">Asal Kota</label>
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
                         <select name="id_provinsi" class="form-control" required>
                             @foreach($provinsi as $data)
                                 <option value="{{$data->id}}">{{$data->nama_provinsi}}</option>

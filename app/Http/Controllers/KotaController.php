@@ -46,11 +46,7 @@ class KotaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-<<<<<<< HEAD
             'kode_kota' => 'required|max:4|unique:kotas|min:0|integer',
-=======
-            'kode_kota' => 'required|max:4|unique:kotas',
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
             'nama_kota' => 'required|unique:kotas'
 
         ],
@@ -59,13 +55,9 @@ class KotaController extends Controller
             'kode_kota.max' => 'Kode Max 4 Digit',
             'kode_kota.unique' => 'Kode Sudah Terpakai',
             'nama_kota.required' => 'Nama Kota Harap Diisi!',
-<<<<<<< HEAD
             'nama_kota.unique' => 'Nama Sudah Terpakai',
             'kode_kota.min' => 'Kode Min 0 Digit!',
             'kode_kota.integer' => 'Kode integer!'
-=======
-            'nama_kota.unique' => 'Nama Sudah Terpakai'
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
 
         ]);
 
@@ -113,24 +105,16 @@ class KotaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-<<<<<<< HEAD
             'kode_kota' => 'required|max:4|min:0|integer',
-=======
-            'kode_kota' => 'required|max:4',
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
             'nama_kota' => 'required'
 
         ],
         [
             'kode_kota.required' => 'Kode Harap Diisi!',
             'kode_kota.max' => 'Kode Max 4 Digit',
-<<<<<<< HEAD
             'nama_kota.required' => 'Nama Kota Harap Diisi!',
             'kode_kota.min' => 'Kode Min 0 Digit!',
             'kode_kota.integer' => 'Kode integer!'
-=======
-            'nama_kota.required' => 'Nama Kota Harap Diisi!'
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
 
         ]);
         $kota = Kota::findOrFail($id);

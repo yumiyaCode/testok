@@ -9,11 +9,7 @@
 
                 <div class="card-body">
                      <div class="form-group">
-<<<<<<< HEAD
                         <label for="">Kecamatan</label>
-=======
-                        <label for="">Asal kelurahan</label>
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
                         <input type="text" name="id_kecamatan" class="form-control" value="{{$kelurahan->kecamatan->nama_kecamatan}}" readonly>
                     </div>
                       <div class="form-group">

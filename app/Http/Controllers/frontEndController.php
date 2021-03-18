@@ -29,7 +29,6 @@ class frontEndController extends Controller
     ->sum('kasuses.meninggal');
     
    //Global
-<<<<<<< HEAD
 //    $data = [];
 //    $response = Http::get('https://api.kawalcorona.com/')->json();
 //    foreach ($response as $key) {
@@ -41,19 +40,6 @@ class frontEndController extends Controller
 //                'meninggal' =>$key['attributes']['Deaths']
 //            ];
 //    }
-=======
-   $data = [];
-   $response = Http::get('https://api.kawalcorona.com/')->json();
-   foreach ($response as $key) {
-       $data[] = [
-               'nama_negara' => $key['attributes']['Country_Region'], 
-               'kasus' =>$key['attributes']['Confirmed'],
-               'aktif' =>$key['attributes']['Active'],
-               'sembuh' =>$key['attributes']['Recovered'],
-               'meninggal' =>$key['attributes']['Deaths']
-           ];
-   }
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
    $provAll = Provinsi::all();
    $provAll = DB::table('provinsis')
    ->join('kotas','kotas.id_provinsi','=','provinsis.id')
@@ -96,10 +82,6 @@ class frontEndController extends Controller
 //          ];
 //  }
 
-<<<<<<< HEAD
     return view('welcome',compact('positif','sembuh','meninggal','provAll'));
-=======
-    return view('welcome',compact('positif','sembuh','meninggal','data','provAll'));
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
    }
 }

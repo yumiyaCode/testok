@@ -19,15 +19,9 @@ class CreateKasusesTable extends Migration
             $table->foreign('id_rw')
                     ->references('id')
                     ->on('rws')->onDelete('cascade');
-<<<<<<< HEAD
                     $table->integer('positif');
                     $table->integer('sembuh');
                     $table->integer('meninggal');
-=======
-                    $table->string('positif');
-                    $table->string('sembuh');
-                    $table->string('meninggal');
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
                     $table->date('tanggal');
             $table->timestamps();
         });

@@ -44,11 +44,7 @@ class ProvinsiController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-<<<<<<< HEAD
             'kode_provinsi' => 'integer|required|max:4|unique:provinsis|min:0',
-=======
-            'kode_provinsi' => 'required|max:4|unique:provinsis',
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
             'nama_provinsi' => 'required|unique:provinsis'
 
         ],
@@ -57,13 +53,9 @@ class ProvinsiController extends Controller
             'kode_provinsi.max' => 'Kode Max 4 Digit',
             'kode_provinsi.unique' => 'Kode Sudah Terpakai',
             'nama_provinsi.required' => 'Nama Provinsi Harap Diisi!',
-<<<<<<< HEAD
             'nama_provinsi.unique' => 'Nama Sudah Terpakai',
             'kode_provinsi.min' => 'Kode Min 0 Digit!',
             'kode_provinsi.integer' => 'Kode integer!'
-=======
-            'nama_provinsi.unique' => 'Nama Sudah Terpakai'
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
 
         ]);
         $provinsi = new Provinsi();
@@ -109,24 +101,16 @@ class ProvinsiController extends Controller
     {
 
         $request->validate([
-<<<<<<< HEAD
             'kode_provinsi' => 'required|max:4|min:0|integer',
-=======
-            'kode_provinsi' => 'required|max:4',
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
             'nama_provinsi' => 'required'
 
         ],
         [
             'kode_provinsi.required' => 'Kode Harap Diisi!',
             'kode_provinsi.max' => 'Kode Max 4 Digit',
-<<<<<<< HEAD
             'nama_provinsi.required' => 'Nama Provinsi Harap Diisi!',
             'kode_provinsi.min' => 'Kode Min 0 Digit!',
             'kode_provinsi.integer' => 'Kode integer!'
-=======
-            'nama_provinsi.required' => 'Nama Provinsi Harap Diisi!'
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
 
         ]);
         $provinsi = Provinsi::findOrFail($id);

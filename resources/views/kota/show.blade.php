@@ -16,11 +16,7 @@
                     </div>
                      </div>
                      <div class="form-group">
-<<<<<<< HEAD
                         <label for="">Provinsi</label>
-=======
-                        <label for="">Asal Kota</label>
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
                         <input type="text" name="id_provinsi" class="form-control" value="{{$kota->provinsi->nama_provinsi}}" readonly>
                     </div>
                       <div class="form-group">
