@@ -176,7 +176,43 @@
       </div>
     </div>
 
-   
+    <div class="container">
+              <div class="row justify-content-center">
+              <h3 class="" style="margin-bottom:30px; color:blue;"><b> Data Indonesia</b> <br></h3>
+              <div class="col-md-12" style="margin-bottom:40px">
+                  <div class="card">
+                  <div class="card-body">
+                  <table  class="table table-striped table-bordered" style="width:100%" id="e">
+                    <thead>
+                      <tr>
+                         <th>No</th>
+                         <th>Provinsi</th> 
+                         <th>Positif</th>
+                         <th>Sembuh</th>
+                         <th>Meninggal</th>
+                       
+                       </tr>  
+                    </thead>
+                    <tbody>
+                         @php $no= 1; @endphp
+                         @foreach($provAll as $data2)
+                            <tr>
+                                <th scoppe="row">{{$no++}}</th>
+                                <td>{{$data2->nama_provinsi}}</td>
+                                <td>{{$data2->positif}}</td>
+                                <td>{{$data2->sembuh}}</td>
+                                <td>{{$data2->meninggal}}</td>
+                              
+                            </tr>
+                          @endforeach
+                  </tbody>  
+                 </table>
+                  </div>
+                    
+              </div>
+                   </div>
+                  </div>
+              </div>
            
                 
 
