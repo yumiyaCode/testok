@@ -5,11 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<<<<<<< HEAD
     <title>Admin Login</title>
-=======
-    <title>Purple Admin</title>
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
@@ -75,19 +71,11 @@
                                 </div>
                                 <div class="text-center mt-4 font-weight-light"> Don't have an account? <a
                                         href="{{ route('register') }}" class="text-primary">Create</a>
-<<<<<<< HEAD
                                 <!-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                     @endif -->
-=======
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                    @endif
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
                                 </div>
                                 </form>
                             </div>

@@ -4,11 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<<<<<<< HEAD
     <title>You cant Use this form</title>
-=======
-    <title>Purple Admin</title>
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
@@ -29,7 +25,6 @@
           <div class="row flex-grow">
             <div class="col-lg-4 mx-auto">
               <div class="auth-form-light text-left p-5">
-<<<<<<< HEAD
                 <!-- <div class="brand-logo">
                   <img src="{{asset('assets/images/logo.svg')}}">
                 </div> -->
@@ -37,15 +32,6 @@
                 <!-- <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6> -->
                 <form class="pt-3" method="POST" action="{{ route('register') }}">
                 <!-- @csrf
-=======
-                <div class="brand-logo">
-                  <img src="{{asset('assets/images/logo.svg')}}">
-                </div>
-                <h4>New here?</h4>
-                <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-                <form class="pt-3" method="POST" action="{{ route('register') }}">
-                @csrf
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
                   <div class="form-group">
                     <input id="name" type="text" class="form-control  form-control-lg @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus
                     placeholder="Username">
@@ -80,7 +66,6 @@
                   <div class="form-group">
                     <input id="password-confirm" type="password" class="form-control  form-control-lg" name="password_confirmation" 
                     required autocomplete="new-password"  placeholder="Confirm Pasword">
-<<<<<<< HEAD
                   </div> -->
              
                   <!-- <div class="mt-3">
@@ -89,16 +74,6 @@
                                 </button>
                   </div> -->
                   <div class="text-center mt-3 font-weight-light"> You cant make account here?admin and dev only who have account for login <a href="{{ route('login') }}" class="text-primary">Login</a>
-=======
-                  </div>
-             
-                  <div class="mt-3">
-                    <button type="submit" class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn">
-                                    {{ __('Register') }}
-                                </button>
-                  </div>
-                  <div class="text-center mt-4 font-weight-light"> Already have an account? <a href="{{ route('login') }}" class="text-primary">Login</a>
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
                   </div>
                 </form>
               </div>
