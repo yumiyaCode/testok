@@ -109,7 +109,24 @@
 
 
     <!-- MAIN -->
-
+    <?php
+            $p = 0;
+            $m = 0;
+            $g = 0;
+            $h = 0;
+            $k = 0;
+            foreach ($data as $key) {
+                $p += $key['kasus'];
+                $g += $key['aktif'];
+                $h += $key['meninggal'];
+                $k += $key['sembuh'];
+            }
+            foreach ($tracking as $ke) {
+                $m += $ke->positif;
+                $m += $ke->sembuh;
+                $m += $ke->meninggal;
+            }
+        ?>
     <div class="site-section stats">
       <div class="container">
         <div class="row mb-3">
@@ -124,7 +141,7 @@
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number text-warning">{{$positif}}</strong>
+              <strong class="d-block number text-warning">{{$p}}</strong>
               <span class="label">Kasus Positif</span>
             </div>
           </div>
@@ -133,7 +150,7 @@
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number text-danger">{{$meninggal}}</strong>
+              <strong class="d-block number text-danger">{{$h}}</strong>
               <span class="label">Meninggal</span>
             </div>
           </div>
@@ -142,8 +159,17 @@
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number text-success">{{$sembuh}}</strong>
+              <strong class="d-block number text-success">{{$k}}</strong>
               <span class="label">Kasus Sembuh</span>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="data">
+              <span class="icon text-primary">
+                <span class="flaticon-virus"></span>
+              </span>
+              <strong class="d-block number text-success">{{$m}}</strong>
+              <span class="label">Kasus Indo</span>
             </div>
           </div>
         </div>
