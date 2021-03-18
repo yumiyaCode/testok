@@ -30,6 +30,7 @@ class frontEndController extends Controller
     ->join('kasuses','rws.id','=','kasuses.id_rw')
     ->sum('kasuses.meninggal')
     ->get();
+    
    //Global
 //    $data = [];
 //    $response = Http::get('https://api.kawalcorona.com/')->json();
