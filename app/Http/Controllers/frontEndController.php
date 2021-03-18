@@ -16,18 +16,20 @@ class frontEndController extends Controller
     $positif = DB::table('rws')
     ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
     ->join('kasuses','rws.id','=','kasuses.id_rw')
-    ->sum('kasuses.positif');
+    ->sum('kasuses.positif')
+    ->get();
 
     $sembuh = DB::table('rws')
     ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
     ->join('kasuses','rws.id','=','kasuses.id_rw')
-    ->sum('kasuses.sembuh');
+    ->sum('kasuses.sembuh')
+    ->get();
 
     $meninggal = DB::table('rws')
     ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
     ->join('kasuses','rws.id','=','kasuses.id_rw')
-    ->sum('kasuses.meninggal');
-    
+    ->sum('kasuses.meninggal')
+    ->get();
    //Global
 //    $data = [];
 //    $response = Http::get('https://api.kawalcorona.com/')->json();
