@@ -46,20 +46,12 @@ class RwController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-<<<<<<< HEAD
             'nama_rw' => 'required|max:2'
-=======
-            'nama_rw' => 'required|max:3'
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
 
         ],
         [
             'nama_rw.required' => 'Nama rw Harap Diisi!',
-<<<<<<< HEAD
             'nama_rw.max' => 'Maksimal 2 Digit!'
-=======
-            'nama_rw.max' => 'Maksimal 3 Digit!'
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
 
         ]);
 
@@ -106,19 +98,12 @@ class RwController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-<<<<<<< HEAD
             'nama_rw' => 'required|max:2'
-=======
-            'nama_rw' => 'required'
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
 
         ],
         [
             'nama_rw.required' => 'Nama rw Harap Diisi!',
-<<<<<<< HEAD
             'nama_rw.max' => 'Maksimal 2 Digit!'
-=======
->>>>>>> 4754c44f9a1b3c2e1af5816492f52f743b05d8d7
 
         ]);
         $rw = Rw::findOrFail($id);
