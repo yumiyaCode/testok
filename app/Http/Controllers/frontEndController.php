@@ -77,6 +77,6 @@ class frontEndController extends Controller
 
 
 
-    return view('welcome',compact('tracking','data','provAll','global'));
+    return view('welcome',compact('tracking','data','provAll','data'));
    }
 }
