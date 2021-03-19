@@ -136,34 +136,34 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-3">
             <div class="data">
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number text-warning">{{$positif}}</strong>
+              <strong class="d-block number text-warning">{{$p}}</strong>
               <span class="label">Kasus Positif</span>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-3">
             <div class="data">
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number text-danger">{{$sembuh}}</strong>
+              <strong class="d-block number text-danger">{{$h}}</strong>
               <span class="label">Meninggal</span>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-3">
             <div class="data">
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number text-success">{{$meninggal}}</strong>
+              <strong class="d-block number text-success">{{$k}}</strong>
               <span class="label">Kasus Sembuh</span>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-3">
             <div class="data">
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>

@@ -49,26 +49,9 @@ class frontEndController extends Controller
                     ->rightjoin('provinsis' ,'kotas.id_provinsi', '=', 'provinsis.id')
                     ->groupby('provinsis.id', 'provinsis.nama_provinsi')
                     ->get();
-
-                    $positif = DB::table('rws')
-                    ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
-                    ->join('kasuses','rws.id','=','kasuses.id_rw')
-                    ->sum('kasuses.positif')
-                    ;
-                
-                    $sembuh = DB::table('rws')
-                    ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
-                    ->join('kasuses','rws.id','=','kasuses.id_rw')
-                    ->sum('kasuses.sembuh')
-                    ;
-                
-                    $meninggal = DB::table('rws')
-                    ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
-                    ->join('kasuses','rws.id','=','kasuses.id_rw')
-                    ->sum('kasuses.meninggal')
-                    ;
+    
 
 
-    return view('welcome',compact('positif','sembuh','meninggal','tracking','data'));
+    return view('welcome',compact('tracking','data'));
    }
 }
