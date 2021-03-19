@@ -49,9 +49,34 @@ class frontEndController extends Controller
                     ->rightjoin('provinsis' ,'kotas.id_provinsi', '=', 'provinsis.id')
                     ->groupby('provinsis.id', 'provinsis.nama_provinsi')
                     ->get();
-    
+     //Global
+   $data = [];
+   $response = Http::get('https://api.kawalcorona.com/')->json();
+   foreach ($response as $key) {
+       $data[] = [
+               'nama_negara' => $key['attributes']['Country_Region'], 
+               'kasus' =>$key['attributes']['Confirmed'],
+               'aktif' =>$key['attributes']['Active'],
+               'sembuh' =>$key['attributes']['Recovered'],
+               'meninggal' =>$key['attributes']['Deaths']
+           ];
+   }
+   $provAll = Provinsi::all();
+   $provAll = DB::table('provinsis')
+   ->join('kotas','kotas.id_provinsi','=','provinsis.id')
+   ->join('kecamatans','kecamatans.id_kota','=','kotas.id')
+   ->join('kelurahans','kelurahans.id_kecamatan','=','kecamatans.id')
+   ->join('rws','rws.id_kelurahan','=','kelurahans.id')
+   ->join('kasuses','kasuses.id_rw','=','rws.id')
+   ->select('kode_provinsi','nama_provinsi', 
+            DB::raw('SUM(kasuses.positif) as positif'),
+             DB::raw('SUM(kasuses.sembuh) as sembuh'), 
+              DB::raw('SUM(kasuses.meninggal) as meninggal'))
+              ->groupBy('kode_provinsi','nama_provinsi')
+              ->get();
 
 
-    return view('welcome',compact('tracking','data'));
+
+    return view('welcome',compact('tracking','data','provAll','global'));
    }
 }
