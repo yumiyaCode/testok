@@ -54,19 +54,19 @@ class frontEndController extends Controller
                     ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
                     ->join('kasuses','rws.id','=','kasuses.id_rw')
                     ->sum('kasuses.positif')
-                    ->get();
+                    ;
                 
                     $sembuh = DB::table('rws')
                     ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
                     ->join('kasuses','rws.id','=','kasuses.id_rw')
                     ->sum('kasuses.sembuh')
-                    ->get();
+                    ;
                 
                     $meninggal = DB::table('rws')
                     ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
                     ->join('kasuses','rws.id','=','kasuses.id_rw')
                     ->sum('kasuses.meninggal')
-                    ->get();
+                    ;
 
 
     return view('welcome',compact('positif','sembuh','meninggal','tracking','data'));
