@@ -141,7 +141,7 @@
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number text-warning">{{$p}}</strong>
+              <strong class="d-block number text-warning">{{$positif}}</strong>
               <span class="label">Kasus Positif</span>
             </div>
           </div>
@@ -150,7 +150,7 @@
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number text-danger">{{$h}}</strong>
+              <strong class="d-block number text-danger">{{$sembuh}}</strong>
               <span class="label">Meninggal</span>
             </div>
           </div>
@@ -159,7 +159,7 @@
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number text-success">{{$k}}</strong>
+              <strong class="d-block number text-success">{{$meninggal}}</strong>
               <span class="label">Kasus Sembuh</span>
             </div>
           </div>
