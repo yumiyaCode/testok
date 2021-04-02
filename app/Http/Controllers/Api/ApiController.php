@@ -143,13 +143,10 @@ class ApiController extends Controller
 
                               $res = [
                                 'status' => 200,
-                                'data' => [ 
-                                [
-                                'Provinsi' => $provAll,
-                                ]
-                                ],
+                                'data' => 
+                                $provAll
+                                ,
                                 'message' => 'Berhasil'
-                    
                             ];
                 return response()->json($res,200);
     }
