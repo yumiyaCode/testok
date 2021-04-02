@@ -121,11 +121,11 @@
                 $h += $key['meninggal'];
                 $k += $key['sembuh'];
             }
-            foreach ($tracking as $ke) {
-                $m += $ke->positif;
-                $m += $ke->sembuh;
-                $m += $ke->meninggal;
-            }
+            // foreach ($tracking as $ke) {
+            //     $m += $ke->positif;
+            //     $m += $ke->sembuh;
+            //     $m += $ke->meninggal;
+            // }
         ?>
     <div class="site-section stats">
       <div class="container">
@@ -136,40 +136,31 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-3">
+          <div class="col-lg-4">
             <div class="data">
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number text-warning">{{$p}}</strong>
+              <strong class="d-block number text-warning">{{$positif}}</strong>
               <span class="label">Kasus Positif</span>
             </div>
           </div>
-          <div class="col-lg-3">
+          <div class="col-lg-4">
             <div class="data">
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number text-danger">{{$h}}</strong>
+              <strong class="d-block number text-danger">{{$meninggal}}</strong>
               <span class="label">Meninggal</span>
             </div>
           </div>
-          <div class="col-lg-3">
+          <div class="col-lg-4">
             <div class="data">
               <span class="icon text-primary">
                 <span class="flaticon-virus"></span>
               </span>
-              <strong class="d-block number text-success">{{$k}}</strong>
+              <strong class="d-block number text-success">{{$sembuh}}</strong>
               <span class="label">Kasus Sembuh</span>
-            </div>
-          </div>
-          <div class="col-lg-3">
-            <div class="data">
-              <span class="icon text-primary">
-                <span class="flaticon-virus"></span>
-              </span>
-              <strong class="d-block number text-success">{{$m}}</strong>
-              <span class="label">Kasus Indo</span>
             </div>
           </div>
         </div>

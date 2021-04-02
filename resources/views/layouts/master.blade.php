@@ -93,7 +93,7 @@
                         </div>
                     </div> -->
                     @yield('content')
-
+                     
 
                     <!-- content-wrapper ends -->
 
@@ -135,6 +135,12 @@
 <script>
     $(document).ready(function () {
         $('#e').DataTable();
+    });
+
+</script>
+<script>
+    $(document).ready(function () {
+        $('#report').DataTable();
     });
 
 </script>

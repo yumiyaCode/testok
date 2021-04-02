@@ -23,20 +23,20 @@ class UserSeeder extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ],
-        [
-            'name' => 'andi',
-            'email' => 'admin2@gmail.com',
-            'password' => Hash::make('andigaming321'),
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ],
-        [
-            'name' => 'mrnothing',
-            'email' => 'useadmin@gmail.com',
-            'password' => Hash::make('phpalways123'),
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
-        ]
+        // [
+        //     'name' => 'andi',
+        //     'email' => 'admin2@gmail.com',
+        //     'password' => Hash::make('andigaming321'),
+        //     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        //     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+        // ],
+        // [
+        //     'name' => 'mrnothing',
+        //     'email' => 'useadmin@gmail.com',
+        //     'password' => Hash::make('phpalways123'),
+        //     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+        //     'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+        // ]
     );
     }
 }

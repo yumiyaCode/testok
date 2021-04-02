@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +19,7 @@ Route::resource('/',frontEndController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');
+Route::get('/admin', [App\Http\Controllers\frontEndController::class, 'index2'])->name('admin');
 
 use App\Http\Controllers\ProvinsiController;
 Route::resource('provinsi',ProvinsiController::class);
@@ -37,5 +38,11 @@ Route::resource('rw',RwController::class);
 
 use App\Http\Controllers\KasuseController;
 Route::resource('kasuse',KasuseController::class);
+
+use App\Http\Controllers\ReportController;
+ // report
+ Route::get('report-provinsi', [ReportController::class, 'getReportProvinsi']);
+ Route::post('report-provinsi', [ReportController::class, 'ReportProvinsi']);
+//  Route::get('/report-provinsi/export_excel', 'ReportController@export_excel');
 
 Route::view('city','livewire.home');

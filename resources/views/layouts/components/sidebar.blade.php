@@ -16,6 +16,12 @@
             </a>
         </li>
         <li class="nav-item">
+              <a class="nav-link" href="{{ url('report-provinsi') }}">
+                <span class="menu-title">->Report</span>
+                <!-- <i class="mdi mdi-home menu-icon">See</i> -->
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{route('provinsi.index')}}">
                 <span class="menu-title">->Provinsi</span>
                 <!-- <i class="mdi mdi-home menu-icon">See</i> -->

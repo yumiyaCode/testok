@@ -35,32 +35,33 @@ class frontEndController extends Controller
                   ];
           }
       }
-      $tracking = DB::table('kasuses')
-      ->select(
-         DB::raw('provinsis.id'),
-         DB::raw('provinsis.nama_provinsi as nama_provinsi'),
-         DB::raw('SUM(kasuses.positif) as positif'),
-         DB::raw('SUM(kasuses.sembuh) as sembuh'),
-         DB::raw('SUM(kasuses.meninggal) as meninggal'))
-                    ->join('rws' ,'kasuses.id_rw', '=', 'rws.id')
-                    ->join('kelurahans' ,'rws.id_kelurahan', '=', 'kelurahans.id')
-                    ->join('kecamatans' ,'kelurahans.id_kecamatan', '=', 'kecamatans.id')
-                    ->join('kotas' ,'kecamatans.id_kota', '=', 'kotas.id')
-                    ->rightjoin('provinsis' ,'kotas.id_provinsi', '=', 'provinsis.id')
-                    ->groupby('provinsis.id', 'provinsis.nama_provinsi')
-                    ->get();
-     //Global
-   $data = [];
-   $response = Http::get('https://api.kawalcorona.com/')->json();
-   foreach ($response as $key) {
-       $data[] = [
-               'nama_negara' => $key['attributes']['Country_Region'], 
-               'kasus' =>$key['attributes']['Confirmed'],
-               'aktif' =>$key['attributes']['Active'],
-               'sembuh' =>$key['attributes']['Recovered'],
-               'meninggal' =>$key['attributes']['Deaths']
-           ];
-   }
+      $positif = DB::table('rws')
+      ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
+      ->join('kasuses','rws.id','=','kasuses.id_rw')
+      ->sum('kasuses.positif');
+
+      $sembuh = DB::table('rws')
+      ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
+      ->join('kasuses','rws.id','=','kasuses.id_rw')
+      ->sum('kasuses.sembuh');
+
+      $meninggal = DB::table('rws')
+      ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
+      ->join('kasuses','rws.id','=','kasuses.id_rw')
+      ->sum('kasuses.meninggal');
+
+//      //Global
+//    $data = [];
+//    $response = Http::get('https://api.kawalcorona.com/')->json();
+//    foreach ($response as $key) {
+//        $data[] = [
+//                'nama_negara' => $key['attributes']['Country_Region'], 
+//                'kasus' =>$key['attributes']['Confirmed'],
+//                'aktif' =>$key['attributes']['Active'],
+//                'sembuh' =>$key['attributes']['Recovered'],
+//                'meninggal' =>$key['attributes']['Deaths']
+//            ];
+//    }
    $provAll = Provinsi::all();
    $provAll = DB::table('provinsis')
    ->join('kotas','kotas.id_provinsi','=','provinsis.id')
@@ -77,6 +78,53 @@ class frontEndController extends Controller
 
 
 
-    return view('welcome',compact('tracking','data','provAll','data'));
+    return view('welcome',compact('positif','sembuh','meninggal','data','provAll'));
+
+ 
+   }
+   public function index2()
+   {
+     
+      $positifAd = DB::table('rws')
+      ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
+      ->join('kasuses','rws.id','=','kasuses.id_rw')
+      ->sum('kasuses.positif');
+
+      $sembuhAd = DB::table('rws')
+      ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
+      ->join('kasuses','rws.id','=','kasuses.id_rw')
+      ->sum('kasuses.sembuh');
+
+      $meninggalAd = DB::table('rws')
+      ->select('kasuses.positif','kasuses.sembuh','kasuses.meninggal')
+      ->join('kasuses','rws.id','=','kasuses.id_rw')
+      ->sum('kasuses.meninggal');
+
+    // chart
+         $casesSembuh = DB::table('kasuses')
+         ->select(
+             DB::raw('sum(kasuses.sembuh) as sembuh'), )
+         ->orderBy('kasuses.tanggal')
+         ->groupBy('kasuses.tanggal')->pluck('sembuh');
+     $casesPositif = DB::table('kasuses')
+         ->select(
+             DB::raw('sum(kasuses.positif) as positif'), )
+         ->orderBy('kasuses.tanggal')
+         ->groupBy('kasuses.tanggal')->pluck('positif');
+
+     $casesMeninggal = DB::table('kasuses')
+         ->select(
+             DB::raw('sum(kasuses.meninggal) as meninggal'), )
+         ->orderBy('kasuses.tanggal')
+         ->groupBy('kasuses.tanggal')->pluck('meninggal');
+     $casesTanggal = DB::table('kasuses')
+         ->select(
+             DB::raw('kasuses.tanggal'), )
+         ->orderBy('kasuses.tanggal')
+         ->groupBy('kasuses.tanggal')->pluck('tanggal');
+
+
+
+    return view('layouts.adminm',compact('positifAd','sembuhAd','meninggalAd', 'casesSembuh', 'casesPositif', 'casesMeninggal', 'casesTanggal'));
    }
 }
