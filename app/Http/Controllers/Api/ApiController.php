@@ -141,14 +141,16 @@ class ApiController extends Controller
                               ->whereDate('provinsis.created_at', '=' , $nowDay)
                               ->get();
 
-                   $res = [
-                    'succes' => true,
-                    'data' => 'Data Kasus Provinsi di Indonesia',
-                    'Data Hari_ini' => $provAllNow,
-                    'Data Provinsi' => $provAll,
-                    'massage' => 'Data Berhasil ditampilkan'
-        
-                ];
+                              $res = [
+                                'status' => 200,
+                                'data' => [ 
+                                [
+                                        'Provinsi' => "$provAll",
+                                        ]
+                                ],
+                                'message' => 'Berhasil'
+                    
+                            ];
                 return response()->json($res,200);
     }
 
