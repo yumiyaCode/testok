@@ -43,7 +43,7 @@ class ApiController extends Controller
             'data' => 'Data Kasus Indonesia',
             'Jumlah Positif' => $positif,
             'Jumlah Meninggal' => $meninggal,
-            'Jumlah Sembuh' => $sembuh1,
+            'Jumlah Sembuh' => $sembuh,
             'massage' => 'Data Berhasil ditampilkan'
 
         ];
