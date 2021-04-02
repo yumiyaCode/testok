@@ -39,12 +39,15 @@ class ApiController extends Controller
         ->sum('kasuses.meninggal');
 
         $res = [
-            'succes' => true,
-            'data' => 'Data Kasus Indonesia',
-            'Jumlah Positif' => $positif,
-            'Jumlah Meninggal' => $meninggal,
-            'Jumlah Sembuh' => $sembuh,
-            'massage' => 'Data Berhasil ditampilkan'
+            'status' => 200,
+            'data' => [ 
+            [
+                    'positif' => "$positif",
+                    'sembuh' => "$sembuh",
+                    'meninggal' => "$meninggal",
+                    ]
+            ],
+            'message' => 'Berhasil'
 
         ];
         return response()->json($res,200);
