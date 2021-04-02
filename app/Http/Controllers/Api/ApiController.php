@@ -145,8 +145,8 @@ class ApiController extends Controller
                                 'status' => 200,
                                 'data' => [ 
                                 [
-                                        'Provinsi' => "$provAll",
-                                        ]
+                                'Provinsi' => $provAll,
+                                ]
                                 ],
                                 'message' => 'Berhasil'
                     
