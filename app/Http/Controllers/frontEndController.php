@@ -100,31 +100,23 @@ class frontEndController extends Controller
       ->join('kasuses','rws.id','=','kasuses.id_rw')
       ->sum('kasuses.meninggal');
 
-    // chart
-         $casesSembuh = DB::table('kasuses')
-         ->select(
-             DB::raw('sum(kasuses.sembuh) as sembuh'), )
-         ->orderBy('kasuses.tanggal')
-         ->groupBy('kasuses.tanggal')->pluck('sembuh');
-     $casesPositif = DB::table('kasuses')
-         ->select(
-             DB::raw('sum(kasuses.positif) as positif'), )
-         ->orderBy('kasuses.tanggal')
-         ->groupBy('kasuses.tanggal')->pluck('positif');
-
-     $casesMeninggal = DB::table('kasuses')
-         ->select(
-             DB::raw('sum(kasuses.meninggal) as meninggal'), )
-         ->orderBy('kasuses.tanggal')
-         ->groupBy('kasuses.tanggal')->pluck('meninggal');
-     $casesTanggal = DB::table('kasuses')
-         ->select(
-             DB::raw('kasuses.tanggal'), )
-         ->orderBy('kasuses.tanggal')
-         ->groupBy('kasuses.tanggal')->pluck('tanggal');
+      $provAllAd = Provinsi::all();
+      $provAllAd = DB::table('provinsis')
+      ->join('kotas','kotas.id_provinsi','=','provinsis.id')
+      ->join('kecamatans','kecamatans.id_kota','=','kotas.id')
+      ->join('kelurahans','kelurahans.id_kecamatan','=','kecamatans.id')
+      ->join('rws','rws.id_kelurahan','=','kelurahans.id')
+      ->join('kasuses','kasuses.id_rw','=','rws.id')
+      ->select('kode_provinsi','nama_provinsi', 
+               DB::raw('SUM(kasuses.positif) as positif'),
+                DB::raw('SUM(kasuses.sembuh) as sembuh'), 
+                 DB::raw('SUM(kasuses.meninggal) as meninggal'))
+                 ->groupBy('kode_provinsi','nama_provinsi')
+                 ->get();
+   
 
 
 
-    return view('layouts.adminm',compact('positifAd','sembuhAd','meninggalAd', 'casesSembuh', 'casesPositif', 'casesMeninggal', 'casesTanggal'));
+    return view('layouts.adminm',compact('positifAd','sembuhAd','meninggalAd','provAllAd'));
    }
 }

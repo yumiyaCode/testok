@@ -15,12 +15,6 @@
                 <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
             </a>
         </li>
-        <li class="nav-item">
-              <a class="nav-link" href="{{ url('report-provinsi') }}">
-                <span class="menu-title">->Report</span>
-                <!-- <i class="mdi mdi-home menu-icon">See</i> -->
-              </a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('provinsi.index')}}">
                 <span class="menu-title">->Provinsi</span>
@@ -55,6 +49,11 @@
               <a class="nav-link" href="{{route('kasuse.index')}}">
                 <span class="menu-title">->Kasus</span>
                 <!-- <i class="mdi mdi-home menu-icon"></i> -->
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('report-provinsi') }}">
+                <span class="menu-title">->Report</span>
               </a>
             </li>
         <!-- <li class="nav-item">

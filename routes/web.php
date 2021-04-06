@@ -43,6 +43,7 @@ use App\Http\Controllers\ReportController;
  // report
  Route::get('report-provinsi', [ReportController::class, 'getReportProvinsi']);
  Route::post('report-provinsi', [ReportController::class, 'ReportProvinsi']);
+ Route::post('pdf-provinsi', [ReportController::class, 'PdfProvinsi']);
 //  Route::get('/report-provinsi/export_excel', 'ReportController@export_excel');
 
 Route::view('city','livewire.home');

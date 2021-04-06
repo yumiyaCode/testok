@@ -32,7 +32,15 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="table-responsive">
+                        @isset($tanggal)
+                        <form action="{{ url('pdf-provinsi') }}" method="post">
+                        @csrf
+                        <input type="hidden" name="awal" value="{{$tanggal[0]}}">
+                        <input type="hidden" name="akhir" value="{{$tanggal[1]}}">
+                        <button class="btn btn-success btn-outline">eksport</button>
+                        </form>
+                        @endisset
+                        <div class="table table-striped table-bordered">
                             <table class="table" id="report">
                                 <thead>
                                     <tr>
@@ -49,12 +57,12 @@
                                         @php $no =1; @endphp
                                         @foreach ($provinsi as $data)
                                             <tr>
-                                                <td>{{ $no++ }}</td>
-                                                <td>{{ $data->nama_provinsi }}</td>
-                                                <td>{{ $data->positif }}</td>
-                                                <td>{{ $data->sembuh }}</td>
-                                                <td>{{ $data->meninggal }}</td>
-                                                <td>{{ date('d M Y', strtotime($data->tanggal)) }}</td>
+                                                <td class="align-content-center">{{ $no++ }}</td>
+                                                <td class="align-content-center">{{ $data->nama_provinsi }}</td>
+                                                <td class="align-content-center">{{ $data->positif }}</td>
+                                                <td class="align-content-center">{{ $data->sembuh }}</td>
+                                                <td class="align-content-center">{{ $data->meninggal }}</td>
+                                                <td class="align-content-center">{{ date('d M Y', strtotime($data->tanggal)) }}</td>
                                             </tr>
                                         @endforeach
                                     @endisset

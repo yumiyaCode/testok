@@ -88,6 +88,43 @@
                         </div>
                     </div>
                    
+                    <div class="container">
+              <div class="row justify-content-center">
+              <h3 class="" style="margin-bottom:30px; color:blue;"><b> Data Indonesia</b> <br></h3>
+              <div class="col-md-12" style="margin-bottom:40px">
+                  <div class="card">
+                  <div class="card-body">
+                  <table  class="table table-striped table-bordered" style="width:100%" id="admin">
+                    <thead>
+                      <tr>
+                         <th>No</th>
+                         <th>Provinsi</th> 
+                         <th>Positif</th>
+                         <th>Sembuh</th>
+                         <th>Meninggal</th>
+                       
+                       </tr>  
+                    </thead>
+                    <tbody>
+                         @php $no= 1; @endphp
+                         @foreach($provAllAd as $data3)
+                            <tr>
+                                <th scoppe="row">{{$no++}}</th>
+                                <td>{{$data3->nama_provinsi}}</td>
+                                <td>{{$data3->positif}}</td>
+                                <td>{{$data3->sembuh}}</td>
+                                <td>{{$data3->meninggal}}</td>
+                              
+                            </tr>
+                          @endforeach
+                  </tbody>  
+                 </table>
+                  </div>
+                    
+              </div>
+                   </div>
+                  </div>
+              </div>   
           
                     
                     <!-- content-wrapper ends -->
@@ -131,7 +168,7 @@
 </body>
 <script>
     $(document).ready(function () {
-        $('#e').DataTable();
+        $('#admin').DataTable();
     });
 
 </script>
